@@ -1,0 +1,20 @@
+.container .content {
+    margin-top: 50px;
+}
+
+.container .content img {
+    width: 100px;
+    height: 80px;
+    /* margin-right: 10px; */
+}
+
+.container .content .fas {
+    cursor: pointer;
+    margin: 6px;
+    transition: all 0.5 ease;
+}
+
+.container .content .fas:hover {
+    color: gray;
+
+}
