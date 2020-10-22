@@ -22,53 +22,55 @@ const Cart = ({ basket, productQuantity, deleteProduct }) => {
         ? productsInCart.map((product, i) => {
             return (
               <div className='row' key={i}>
-                <table className='table col content text-center'>
-                  <thead>
-                    <tr>
-                      <th scope='col'>ID </th>
-                      <th scope='col'>Image </th>
-                      <th scope='col'>name</th>
-                      <th scope='col'>price</th>
-                      <th scope='col'>quantity</th>
-                      <th scope='col'>total</th>
-                      <th scope='col'>delete product</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>{i + 1}</td>
-                      <td>
-                        <img src={product.img} />
-                      </td>
-                      <td>{product.name}</td>
-                      <td>
-                        <div className='price'>${product.price}</div>
-                      </td>
-                      <td>
-                        <i
-                          className='fas fa-arrow-circle-left decrease'
-                          onClick={() =>
-                            productQuantity('decrease', product.name)
-                          }
-                        ></i>
-                        {product.numbers}
-                        <i
-                          className='fas fa-arrow-circle-right increase'
-                          onClick={() =>
-                            productQuantity('increase', product.name)
-                          }
-                        ></i>
-                      </td>
-                      <td>${product.numbers * product.price}</td>
-                      <td>
-                        <i
-                          className='fas fa-times-circle '
-                          onClick={() => deleteProduct(product.name)}
-                        ></i>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div className='col'>
+                  <table className='table content text-center'>
+                    <thead>
+                      <tr>
+                        <th scope='col'>ID </th>
+                        <th scope='col'>Image </th>
+                        <th scope='col'>name</th>
+                        <th scope='col'>price</th>
+                        <th scope='col'>quantity</th>
+                        <th scope='col'>total</th>
+                        <th scope='col'>delete product</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>{i + 1}</td>
+                        <td>
+                          <img src={product.img} />
+                        </td>
+                        <td>{product.name}</td>
+                        <td>
+                          <div className='price'>${product.price}</div>
+                        </td>
+                        <td>
+                          <i
+                            className='fas fa-arrow-circle-left decrease'
+                            onClick={() =>
+                              productQuantity('decrease', product.name)
+                            }
+                          ></i>
+                          {product.numbers}
+                          <i
+                            className='fas fa-arrow-circle-right increase'
+                            onClick={() =>
+                              productQuantity('increase', product.name)
+                            }
+                          ></i>
+                        </td>
+                        <td>${product.numbers * product.price}</td>
+                        <td>
+                          <i
+                            className='fas fa-times-circle '
+                            onClick={() => deleteProduct(product.name)}
+                          ></i>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             );
           })
